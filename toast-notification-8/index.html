@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification</title>
+   
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="buttons">
+        <button onclick="showtost(succesMsg)">Succes</button>
+        <button onclick="showtost(eroor)">error</button>
+        <button onclick="showtost(invalid)">Invalid</button>
+
+
+    </div>
+
+
+    <div id="toastbox"></div>
+  
+
+
+    <script>
+        // waa sms ku daabaci lahayd function
+
+let succesMsg = "Succeefuly submitted";
+let invalid ="!INAVALID mssgeg"
+let eroor = "mssege erorr"
+
+// tana waa meesh ku so bandigi lahayd
+let toastbox= document.getElementById("toastbox")
+
+   
+
+// function waa kiii shaqdada qaban lahaa mssge u baasysa button walpana hdho variable us sii dhiibysa
+        function showtost(mssege) {
+
+          let toast =  document.createElement("div")
+          toast.classList.add("toast")
+          toast.innerHTML = mssege
+          //  console.log(mssege)
+          toastbox.appendChild(toast)
+          
+         
+          if(mssege.includes("succesMsg")){
+            toast.classList.add("succesMsg")
+          }
+          if(mssege.includes("!INAVALID")){
+            toast.classList.add("invalid")
+          }
+          if(mssege.includes("erorr")){
+            toast.classList.add("eroor")
+          }
+          
+          setTimeout(()=> {
+            toast.remove()
+          },6000)
+            
+        }
+    </script>
+    
+</body>
+</html>

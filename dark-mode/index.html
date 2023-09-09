@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dark-mode</title>
+    <LINK rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <h1 class="logo">LOGO</h1>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+
+
+            </ul>
+            <img src="/dark theme icon/moon.png" id="icon">
+           
+        </nav>
+
+        <div class="info">
+            <h2>Xaan cde</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur <br> adipisicing elit. Ipsam omnis, <br> maiores sequi quasi 
+                corporis, voluptas minus rem  <br>vero beatae inventore magni unde magnam eveniet 
+                dolores ab, <br> voluptatibus soluta atque adipisci!</p>
+                <a href="#">Download cv</a>
+        </div>
+        <div class="imgpox">
+            <img src="/468-thumbnail.png">
+        </div>
+
+    </div>
+    
+
+
+    <script>
+  
+  let icon = document.getElementById("icon")
+  console.log(icon)
+
+  icon.onclick = function(){
+
+
+    document.body.classList.toggle("daerk-them")
+    if(document.body.classList.contains("daerk-them")){
+        icon.src = "/dark theme icon/sun.png";
+    }else {
+        icon.src = "/dark theme icon/moon.png"
+    }
+  }
+
+
+    </script>
+</body>
+</html>

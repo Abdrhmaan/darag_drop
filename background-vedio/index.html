@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vedio</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="img-box">
+
+
+            <img src="/background_change_img/background_change_img/transparent.png" width="100%">
+            <div class="img-wrapp">
+                <img src="/background_change_img/background_change_img/original.jpg" width="100%">
+
+
+
+            </div>
+        </div>
+        
+    </div>
+
+
+    <script>
+        
+       
+ 
+ let imgbox =document.querySelector(".img-box")
+ let imgwrapp =document.querySelector(".img-wrapp")
+ console.log(imgwrapp)
+ 
+ let leftspace = imgbox.offsetleft;
+
+ imgbox.onmousemove = function(e){
+    let  boxwid =  (e.pageX - leftspace) + "px";
+  //  imgwrapp.innerHTML = boxwid
+  imgwrapp.style.width = boxwid
+   
+
+ }
+
+
+    </script>
+    
+</body>
+</html>

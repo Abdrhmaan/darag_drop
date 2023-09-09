@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minicalendar</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="hero">
+
+        <div class="calender">
+            <div class="left">
+                <p id="data">0</p> <br>
+                <h2 id="date">sunday</h2>
+                
+            </div>
+            <div class="right">
+                <p id="mount">January</p>
+                <p id="year">2023</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        
+
+   const MounthNames = ["Aug" , "Feb" ,"Mar" , "Apr" , "May" , "June" , "jul" , "Aug" , "Seb" , "Oct" , "Mon" , "Tues" , "Nov" , "Dec"]  
+   const dYnames = ["Aug" , "Sun" , "Mon" , "Wed" , "Thur" , "Fri"] 
+
+        let data = document.getElementById("data")
+        console.log(data)
+        let day = document.getElementById("date")
+        console.log(day)
+        let mount = document.getElementById("mount")
+        console.log(mount)
+
+        let year = document.getElementById("year")
+        console.log(year)
+    
+        let today = new Date()
+        console.log(today)
+
+        data.innerHTML =  today.getDate()
+        day.innerHTML =   dYnames[today.getDay()]
+        mount.innerHTML =   MounthNames[today.getMonth()]
+        year.innerHTML =   today.getFullYear()
+      
+    </script>
+</body>
+</html>

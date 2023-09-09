@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --promaerycplor:#edf2fc;
+    --seconerycplor:#212121;
+}
+.daerk-them {
+    --promaerycplor:#0827bf;
+    --seconerycplor:#fff;
+
+
+}
+  
+/* 
+  --promaerycplor:bllue
+    --seconerycplor:#fff;
+
+
+
+
+
+      --promaerycplor:#000106;
+    --seconerycplor:#fff;
+}
+    --promaerycplor:#000106;
+    --seconerycplor:#fff;
+      --promaerycplor:#edf2fc;
+    --seconerycplor:#212121;
+
+*/
+.hero {
+
+    height: 100vh;
+    width: 100%;
+    background: var(--promaerycplor);
+    position: relative;
+}
+nav {
+    display: flex;
+    align-items: center;
+    width: 85%;
+    justify-content: space-between;
+    padding: 20px 0;
+    margin: auto;
+}
+.logo {
+    cursor: pointer;
+    width: 100px;
+}
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a {
+    text-decoration: none;
+    color:var(--seconerycplor);
+}
+nav ul li a:hover{
+    color: aqua;
+}
+.info {
+    margin-left: 8%;
+    margin-bottom: 15%;
+}
+.info h2 {
+    color: var(--seconerycplor);
+    font-size: 40px;
+}
+.info p {
+    font-size: 20px;
+    color: var(--seconerycplor);
+}
+.info a {
+    background: #212121;
+    padding: 10px 20px;
+    display: inline-block;
+    margin: 10px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+}
+#icon{
+    cursor: pointer;
+    width: 30px;
+}
+nav ul {
+    flex: 1;
+    text-align: right;
+}
+.imgpox{
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+    width: 45%;
+    height: 80%;
+    transition: left 0.5s;
+
+}
+.imgpox img {
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+.imgpox img:hover{
+    left: 54%;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube totorial</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+
+
+  <div class="container">
+
+    <div class="addtask-container">
+        <input type="text" placeholder="enter you" id="inputtext">
+        <button id="atttask">ADD TASK</button>
+
+    </div>
+  
+    
+  <div id="tsk-container">
+
+  </div>
+  </div>
+
+  <script>
+
+    const attsk = document.getElementById("atttask")
+    console.log(attsk)
+    const input = document.getElementById("inputtext")
+    const taskc = document.getElementById("tsk-container")
+
+    attsk.addEventListener("click" , (e) => {
+        let task = document.createElement("div")
+        task.classList.add("task")
+        let li = document.createElement("li")
+        li.innerText = input.value,
+        task.append(li)
+        console.log(task)
+      //  alert("tt")
+      let checkbtun = document.createElement("button")
+      checkbtun.innerHTML = "\u00d7"
+      checkbtun.classList.add('checkbtun')
+      task.append(checkbtun)
+      let remove = document.createElement("button")
+      console.log('checkbtun')
+      remove.innerHTML = "\u00d7"
+      task.append(remove)
+      remove.classList.add('remove')
+      console.log(remove)
+
+
+      if(input.value  ===""){
+        alert("Please input question ")
+      }else {
+        taskc.appendChild(task)
+      }
+      input.value =""
+
+      checkbtun.addEventListener("click" , (e) => {
+      checkbtun.parentElement.style.textDecoration =  "line-through"
+      })
+      remove.addEventListener("click" , (e) => {
+      checkbtun.parentElement.remove()
+      })
+    
+    })
+  </script>
+</body>
+</html>

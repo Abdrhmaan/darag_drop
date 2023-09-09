@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show-here-pssword</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+    <div class="input-box">
+        <input type="password" placeholder="pssword" id="pssowr">
+        <img src="/arrow.png" onclick="showpssword()">
+    </div>
+    
+
+    <script>
+
+        let pssword = document.getElementById("pssowr")
+
+
+        function showpssword(){
+
+            if(pssword.type =="password"){
+                pssword.type = "text"
+            }
+        }
+    </script>
+</body>
+</html>

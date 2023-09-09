@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pssword strengeth -</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="conatiner">
+        <div class="input-box">
+            <input type="password" id="pssword" placeholder="pssword">
+            <button type="submit" onclick="showpssword()"><img src="/arrow.png"></button>
+            <p id="mssege">pssword  is <span id="strength"></span></p>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        let pssword = document.getElementById("pssword")
+        let mssg = document.getElementById("mssege")
+        let str = document.getElementById("strength")
+        console.log(str)
+        
+
+
+        pssword.addEventListener("input" , () => {
+            if(pssword.value.length  > 0){
+                mssg.style.display = "block"
+            }else {
+                mssg.style.display = "none"
+
+            }
+            if(pssword.value.length < 4){
+                str.innerHTML = 'Weak !'
+                pssword.style.borderColor ="#ff5925"
+                str.style.borderColor ="#ff5925"
+            } else if (pssword.value.length >=4 && pssword.value.length < 8){
+                str.innerHTML = 'Medium !'
+                pssword.style.borderColor ="yellow"
+                pssword.style.borderColor ="#ff5925"
+
+            }else if (pssword.value.length >=8){
+                str.innerHTML = 'Strong !'
+                pssword.style.borderColor ="#ff5925"
+                pssword.style.borderColor ="blue"
+            }
+            
+            
+          
+        })
+    </script>
+    
+</body>
+</html>

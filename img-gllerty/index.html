@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAGE gLEERY</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="gllerywarp">
+        <img src="/h-scroll-img/back.png" id="back">
+        <div class="gallery">
+            <div>
+                <span>
+                    <img src="/h-scroll-img/image-3.png">
+                    <img src="/h-scroll-img/image-3.png">
+                    <img src="/h-scroll-img/image-3.png">
+    
+                </span>
+            </div>
+            <div>
+                <span>
+                    <img src="/h-scroll-img/image-3.png">
+                    <img src="/h-scroll-img/image-3.png">
+                    <img src="/h-scroll-img/image-3.png">
+    
+                </span>
+            </div>
+            <div>
+                <span>
+                    <img src="/h-scroll-img/image-3.png">
+                    <img src="/h-scroll-img/image-3.png">
+                    <img src="/h-scroll-img/image-3.png">
+    
+                </span>
+            </div>
+            <div>
+                <span>
+                    <img src="/h-scroll-img/image-3.png">
+                    <img src="/h-scroll-img/image-3.png">
+                    <img src="/h-scroll-img/image-3.png">
+    
+                </span>
+            </div>
+          
+    
+        </div>
+        <img src="/h-scroll-img/next.png" id="next">
+    </div>
+
+
+
+    <script>
+
+        let scrollCONTAINER = document.querySelector(".gallery")
+        console.log(scrollCONTAINER)
+        let backbtn = document.querySelector("#back")
+        console.log(backbtn)
+        let nextbtm = document.querySelector("#next")
+        console.log(nextbtm)
+
+
+        scrollCONTAINER.addEventListener("wheel" , (evt) => {
+            evt.preventDefault()
+            scrollCONTAINER.scrollLeft += evt.deltay;
+        })
+        nextbtm.addEventListener("click" , ()=> {
+            scrollCONTAINER.scrollLeft += 900;
+        })
+        backbtn.addEventListener("click" , ()=> {
+            scrollCONTAINER.scrollLeft -= 900;
+        })
+    </script
+    </script>
+   
+    
+</body>
+</html>

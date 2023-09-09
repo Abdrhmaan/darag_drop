@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music-plter</title>
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/styl.css">
+</head>
+<body>
+    <div class="container">
+        <div class="music-plyer">
+            <nav>
+                <div class="circle">
+                    <i class='bx bxs-left-top-arrow-circle'></i>
+                </div>
+                <div class="circle">
+                    <i class='bx bx-barcode'></i>
+                </div>
+            </nav>
+            <img src="/468-thumbnail (1).png" class="sound-img">
+            <h1>Desscption</h1>
+            <p>najom Nashaad</p>
+            <audio controls id="song">
+                <source src="/" type="audio">
+            </audio>
+            <input type="range" value="0" id="progrss">
+            <div class="controls">
+                <div><i class='bx bx-arrow-back'></i></div>
+                <div><i class='bx bx-arrow-back' id="contril-icon" onclick="playpouse()"></i></div>
+                <div><i class='bx bx-arrow-back'></i></div>
+                   
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        let progress = document.getElementById("progrss")
+        let song = document.getElementById("song")
+        let controll = document.getElementById("contril-icon")
+
+        song.onloadeddata = function(){
+
+
+            progress.max = song.duration
+            progress.value = song.currentTime
+        }
+        function playpouse(){
+
+            if(controll.classList.contains("bx bx-arrow-back")){
+                song.pause()
+                controll.classList.remove("fa-play")
+            }else {
+                song.play()
+            }
+        }
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

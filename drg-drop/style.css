@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0b0423;
+}
+.container H2 {
+    color: #FFF;
+}
+#left,#right{
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+    border: 2px dashed #fff;
+
+}
+.list {
+    height: 60px;
+    margin: 30px;
+    align-items: center;
+    cursor: grab;
+
+    background: #e91e63;
+  
+}
+.list img {
+    width: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
+}

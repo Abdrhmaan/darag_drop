@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drag-drop</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+
+<body>
+    
+    <div class="container">
+      
+
+
+        <div id="left">
+            <div class="list" draggable="true">
+               
+                <p>LISTE ITEM LA AADAYO WAAYE</p>
+
+            </div>
+            <div class="list" draggable="true">
+               
+                <p>LISTE ITEM LA AADAYO WAAYE</p>
+
+            </div>
+            <div class="list" draggable="true">
+              
+                <p>LISTE ITEM LA AADAYO WAAYE</p>
+
+            </div>
+            <div class="list" draggable="true">
+        
+                <p>LISTE ITEM LA AADAYO WAAYE</p>
+
+            </div>
+        </div>
+        <div id="right"></div>
+
+
+
+
+    </div>
+
+
+    <script>
+
+
+
+let rightbox = document.getElementById("right")
+console.log(rightbox)
+let leftBox = document.getElementById("left")
+console.log(leftBox)
+
+
+  let lists = document.getElementsByClassName("list")
+  console.log(lists)
+
+
+
+  
+
+   for(list of lists){
+    list.addEventListener("dragstart" , function(e){
+
+        let select = e.target
+        console.log(select)
+
+        rightbox.addEventListener("dragover" , function(e) {
+            e.preventDefault()
+        })
+        rightbox.addEventListener("drop" , function(e) {
+          
+            rightbox.appendChild(select)
+            select = null
+        })
+
+        
+        leftBox.addEventListener("dragover" , function(e) {
+            e.preventDefault()
+        })
+        leftBox.addEventListener("drop" , function(e) {
+          
+            leftBox.appendChild(select)
+            select = null
+        })
+
+
+    })
+   }
+
+    </script>
+    
+</body>
+</html>

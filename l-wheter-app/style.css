@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #222;
+    color: white;
+}
+.erorr{
+    text-align: left;
+    color: red;
+    display: none;
+    font-size: 30px;
+    margin-top: 20px;
+}
+.card{
+    width: 90%;
+    max-width: 470px;
+    background: linear-gradient(135deg , #00feba , #5b548a);
+    margin: 100px auto;
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: center;
+}
+.sarch {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sarch input {
+    border: 0;
+    outline: none;
+    background: #ebfffc;
+    padding: 16px 25px;
+    border-radius: 30px;
+    margin-right: 16px;
+    font-size: 15px;
+    height: 60px;
+   flex: 1;
+}
+.sarch button {
+    border: 0;
+    outline: none;
+    background: #ebfffc;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+
+}
+.sarch button img {
+    width: 16px;
+}
+.wether-icon {
+    margin-top: 30px;
+    width: 170px;
+}
+.wether h1 {
+    font-size: 45px;
+    font-weight: 300;
+}
+.wether h2 {
+    font-size: 45px;
+    font-weight: 300;
+    margin-top: -10px;
+}
+.detais {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+.col {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+.col img {
+    margin-right: 10px;
+    width: 40px;
+}
+.humidity {
+    color: white;
+    font-size: 20px;
+}
+.wind {
+    color: white;
+}
+.wether{
+
+   
+}

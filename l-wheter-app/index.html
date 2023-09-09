@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wether-app</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div class="card">
+        <div class="sarch">
+            <input type="text" placeholder="enter your city" spellcheck="false">
+            <button><img src="/weather-app-img/search.png"></button>
+        </div>
+        <div class="erorr">
+            <p>Invalid mssege !</p>
+        </div>
+
+        <div class="wether">
+            <img src="/weather-app-img/rain.png" class="wether-icon">
+            <h1 class="temp">22c</h1>
+            <h2 class="cityname">Garowe</h2>
+            <div class="detais">
+                <div class="col">
+                    <img src="/weather-app-img/humidity.png">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p class="humidity">humdity%</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="/weather-app-img/wind.png">
+                    <div>
+                        <p class="wind">50%</p>
+                        <p class="humidity">win speed%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+    <script>
+        // 1 select html ubaahanthay 
+        const searchbox = document.querySelector(".sarch input") 
+        const searchbttn = document.querySelector(".sarch button") 
+        const werhericon = document.querySelector(".wether-icon")
+        console.log(werhericon)
+       
+        const apikey = 'f07c3056da0bde2e1222a3a91530cd9c'
+        const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
+
+        async function ccheckwether(city){
+          const responce = await fetch(apiUrl + city + `&appid=${apikey}`)
+          if(responce.status === 404){
+            document.querySelector(".erorr").style.display='block'
+          }else if(responce.status == 200){
+
+            document.querySelector(".erorr").style.display='none'
+          }
+         
+          const data = await responce.json()
+          document.querySelector(".cityname").innerHTML = data.name
+          document.querySelector(".temp").innerHTML = data.main.temp + "&c"
+          document.querySelector(".temp").innerHTML = data.main.temp
+          document.querySelector(".humidity").innerHTML = data.main.humidity + "%"
+          
+          document.querySelector(".wind").innerHTML = data.wind
+.speed + "km/h"
+
+
+
+  if(data.weather[0].main  == "Clouds"){
+    werhericon.src = "/weather-app-img/clouds.png"
+  }else if (data.weather[0].main
+  == "Clear"){
+    werhericon.src = "/weather-app-img/clear.png"
+  }else if (data.weather[0].main  == "Rain"){
+    werhericon.src = "/weather-app-img/rain.png"
+  }else if (data.weather[0].main  == "Drizzler"){
+    werhericon.src = "/weather-app-img/drizzle.png"
+  }else if (data.weather[0].main  == "Mist"){
+    werhericon.src = "/weather-app-img/mist.png"
+  }
+
+  document.querySelector(".wether").style.display='block'
+  searchbox.value = ""
+
+
+          console.log(data)
+        }
+        searchbttn.addEventListener("click" , ()=> {
+            ccheckwether(searchbox.value)
+
+        })
+       
+    </script>
+
+    
+</bdy>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+    <div class="hero">
+        <div class="seselector">
+            <div id="selectorField">
+                <p id="selectText">Select social media</p>
+                <img src="/SelectMenu_Img/SelectMenu_Img/arrow.png" id="arrow">
+
+
+            </div>
+            <ul id="list" class="hide">
+                <li class="option"> <img src="/SelectMenu_Img/SelectMenu_Img/facebook.png"><p>Fscebok</p></li>
+                <li class="option"> <img src="/SelectMenu_Img/SelectMenu_Img/twitter.png"><p>Twitter</p></li>
+                <li class="option"> <img src="/SelectMenu_Img/SelectMenu_Img/pinterest.png"><p>pinterste</p></li>
+                <li class="option"> <img src="/SelectMenu_Img/SelectMenu_Img/whatsapp.png"><p>Whtaspp</p></li>
+                <li class="option"> <img src="/SelectMenu_Img/SelectMenu_Img/instagram.png"><p>instgram</p></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script>
+
+let selectFeild = document.getElementById("selectorField")
+
+let selecText = document.getElementById("selectText")
+let arrow = document.getElementById("arrow")
+console.log(arrow)
+let llist = document.getElementById("list")
+
+
+
+selectFeild.onclick = function(){
+    llist.classList.toggle("hide")
+    arrow.classList.toggle("rotaet")
+
+
+}
+
+
+var options = document.getElementsByClassName("option")
+
+
+
+
+         
+
+
+
+            for(option of options){
+          //      c
+                option.onclick = function(){
+                    selecText.innerHTML = this.textContent
+                    arrow.classList.remove("rotaet")
+                }
+            }
+
+               
+
+
+                             
+ 
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="quet-box">
+        <h2>Quet of the Day</h2>
+        <blockquote id="queet">Loading ...</blockquote>
+        <span id="author">Loading.</span>
+        <div>
+            <button onclick="GETquet(api)"> New Quite</button>
+            <button onclick="tweet()"> Tweet</button>
+        </div>
+    </div>
+    
+
+
+    <script>
+       const queete =  document.getElementById("queet")  
+        const author= document.getElementById("author")
+
+const api   =   "https://api.quotable.io/random"
+
+
+
+  async function GETquet(URL) {
+
+    const responce = await fetch(URL)
+    let data = await responce.json()
+    queete.innerHTML = data.content
+    author.innerHTML = data.author
+    console.log(data)
+
+
+    
+  }
+
+
+GETquet(api)
+
+
+
+
+  function tweet (){
+    window.open("https://twitter.com/intent/tweet?text=Hello%20world" , "Tweet.window" , "widith = 50px , haight = 300px")
+  }
+    </script>
+    
+</body>
+</html>

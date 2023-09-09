@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random-psswere</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    
+    <div class="conatiner">
+
+
+        <h1>Generate a <br> <span>Random Pssowrd</span></h1>
+        <div class="display">
+
+
+            <input type="text" id="Pssowrd" placeholder="pssword">
+            <img src="/rpg_img/images/copy.png" onclick="copypssword()">
+
+        </div>
+        <button onclick="generate()"> <img src="/rpg_img/images/generate.png">Generate Pssowrd </button>
+
+
+
+
+
+    </div>
+    
+
+
+
+    <script>
+
+        let psswordPox  = document.querySelector("#Pssowrd")
+
+
+     const length =      30
+
+   const Uppercase = 'ABCDEFGHJKLMNOIUYTREWQZXCVBNM'
+   const Lowercse = 'qwertyuioasdfghjklzxcvbnm'
+   const sympol = "@#%^&*()+-=|}{?><}"
+   const Numpwer = "0987654321"
+
+   const all = Uppercase +Lowercse+Symbol + Numpwer
+
+
+        function generate(){
+          
+            let pssworde = "";
+
+
+pssworde += Uppercase [Math.floor(Math.random() * Uppercase.length)]
+
+pssworde += Lowercse[Math.floor(Math.random() * Lowercse.length)]
+pssworde += Numpwer[Math.floor(Math.random() * Numpwer.length)]
+pssworde += sympol[Math.floor(Math.random() * sympol.length)]
+
+
+while(length > pssworde.length){
+
+    pssworde += all[Math.floor(Math.random() * all.length)]
+  
+}
+
+psswordPox.value = pssworde
+        }
+
+        function copypssword() {
+
+            psswordPox.select();
+            document.execCommand("copy")
+            
+        }
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

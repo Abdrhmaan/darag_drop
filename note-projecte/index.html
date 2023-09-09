@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>note-projecte</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="conatiner">
+
+        <h2 > <img src="/notes.png">   Notes</h2>
+        <button class="CreteBTN"> <img src="/edit.png">Create</button>
+     
+
+        <div class="notes-container">
+          <!-- <p  contenteditable="true" class="inpot-box">
+
+                <img src="/delete.png">
+            </p>--> 
+         
+          
+            
+        </div>
+        
+
+    </div>
+
+
+    <script>
+
+        const notsCobtainer  = document.querySelector(".notes-container")
+        console.log(notsCobtainer)
+        const CreteBTN  = document.querySelector(".CreteBTN")
+        console.log(CreteBTN)
+        //pargaph input lmid ahaaa cml
+        const Notes = document.querySelectorAll(".inpot-box")
+        console.log(Notes)
+
+        CreteBTN.addEventListener("click" , ()=> {
+
+            let inputpox = document.createElement("p")
+            let img = document.createElement("img")
+            inputpox.className = "inpot-box"
+            inputpox.setAttribute("contenteditable","true")
+            img.src = "/delete.png"
+            notsCobtainer.appendChild(inputpox).appendChild(img)
+
+           // alert("hh")
+        })
+
+        function show() {
+
+            notsCobtainer.innerHTML = localStorage.getItem("notes")
+
+}
+show()
+
+
+        function updateStorae() {
+
+            localStorage.setItem("notes" , notsCobtainer.innerHTML)
+            
+        }
+
+        
+       
+        
+        notsCobtainer.addEventListener("click" , (e)=> {
+            if(e.target.tagName ==="IMG"){
+                e.target.parentElement.remove()
+                updateStorae();
+            
+            } else if (e.target.tagName ==="P"){
+                notes = document.querySelectorAll(".inpot-box")
+                console.log(notes)
+                notes.forEach(nt => {
+                    nt.onkeyup = function(){
+                        updateStorae()
+                    }
+                    
+                });
+            }
+
+            
+        })
+
+      
+
+    </script>
+
+   
+
+
+
+    
+</body>
+</html>
